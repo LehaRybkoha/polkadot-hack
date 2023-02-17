@@ -8,6 +8,10 @@
     "preview": "vite preview",
     "update": "npx npm-check-updates -u"
   },
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.16.0"
+  },
   "dependencies": {
     "@headlessui/vue": "^1.7.10",
     "@polkadot/api": "^9.13.6",
