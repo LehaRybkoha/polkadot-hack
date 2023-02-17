@@ -1,0 +1,946 @@
+{
+  "source": {
+    "hash": "0xeb9d9ccd7c3c4ac999aa08e3746baf2b941200f3ed93cab17c61d64ef49e1303",
+    "language": "ink! 3.4.0",
+    "compiler": "rustc 1.69.0-nightly"
+  },
+  "contract": {
+    "name": "smartcontract",
+    "version": "0.1.0",
+    "authors": ["[your_name] <[your_email]>"]
+  },
+  "V3": {
+    "spec": {
+      "constructors": [
+        {
+          "args": [],
+          "docs": ["Creates a new ERC-721 token contract."],
+          "label": "new",
+          "payable": false,
+          "selector": "0x9bae9d5e"
+        }
+      ],
+      "docs": [],
+      "events": [
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": true,
+              "label": "from",
+              "type": {
+                "displayName": ["Option"],
+                "type": 15
+              }
+            },
+            {
+              "docs": [],
+              "indexed": true,
+              "label": "to",
+              "type": {
+                "displayName": ["Option"],
+                "type": 15
+              }
+            },
+            {
+              "docs": [],
+              "indexed": true,
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [" Event emitted when a token transfer occurs."],
+          "label": "Transfer"
+        }
+      ],
+      "messages": [
+        {
+          "args": [
+            {
+              "label": "owner",
+              "type": {
+                "displayName": ["AccountId"],
+                "type": 2
+              }
+            }
+          ],
+          "docs": [
+            " Returns the balance of the owner.",
+            "",
+            " This represents the amount of unique tokens the owner has."
+          ],
+          "label": "balance_of",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": ["u32"],
+            "type": 1
+          },
+          "selector": "0x0f755a56"
+        },
+        {
+          "args": [
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [" Returns the owner of the token."],
+          "label": "owner_of",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Option"],
+            "type": 15
+          },
+          "selector": "0x99720c1e"
+        },
+        {
+          "args": [
+            {
+              "label": "owner",
+              "type": {
+                "displayName": ["AccountId"],
+                "type": 2
+              }
+            }
+          ],
+          "docs": [" Return all tokens of owner"],
+          "label": "tokens_of_owner",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Vec"],
+            "type": 7
+          },
+          "selector": "0x2ce8d541"
+        },
+        {
+          "args": [],
+          "docs": [" Return all tokens"],
+          "label": "get_all_tokens",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Vec"],
+            "type": 16
+          },
+          "selector": "0x36562924"
+        },
+        {
+          "args": [
+            {
+              "label": "destination",
+              "type": {
+                "displayName": ["AccountId"],
+                "type": 2
+              }
+            },
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [
+            " Transfers the token from the caller to the given destination."
+          ],
+          "label": "transfer",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 18
+          },
+          "selector": "0x84a15da1"
+        },
+        {
+          "args": [
+            {
+              "label": "from",
+              "type": {
+                "displayName": ["AccountId"],
+                "type": 2
+              }
+            },
+            {
+              "label": "to",
+              "type": {
+                "displayName": ["AccountId"],
+                "type": 2
+              }
+            },
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [" Transfer owned token."],
+          "label": "transfer_from",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 18
+          },
+          "selector": "0x0b396f18"
+        },
+        {
+          "args": [
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            },
+            {
+              "label": "data",
+              "type": {
+                "displayName": ["NftData"],
+                "type": 10
+              }
+            }
+          ],
+          "docs": [" Creates a new token."],
+          "label": "mint",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 18
+          },
+          "selector": "0xcfdd9aa2"
+        },
+        {
+          "args": [
+            {
+              "label": "sosunok",
+              "type": {
+                "displayName": ["AccountId"],
+                "type": 2
+              }
+            }
+          ],
+          "docs": [" test"],
+          "label": "move_money_to",
+          "mutates": false,
+          "payable": true,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 18
+          },
+          "selector": "0xa2ef1959"
+        },
+        {
+          "args": [
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            },
+            {
+              "label": "price",
+              "type": {
+                "displayName": ["Balance"],
+                "type": 14
+              }
+            }
+          ],
+          "docs": [" add token id for sale "],
+          "label": "publish_for_sale",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 18
+          },
+          "selector": "0xed3012ff"
+        },
+        {
+          "args": [],
+          "docs": [" get all tokens which published for sale"],
+          "label": "get_tokens_for_sale",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Vec"],
+            "type": 21
+          },
+          "selector": "0xc5fe9e11"
+        },
+        {
+          "args": [
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [" remove tokens from saling"],
+          "label": "remove_from_sale",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 18
+          },
+          "selector": "0xc8cff53b"
+        },
+        {
+          "args": [
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [" buy token for sale"],
+          "label": "buy_nft",
+          "mutates": true,
+          "payable": true,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 18
+          },
+          "selector": "0x49505a05"
+        },
+        {
+          "args": [
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [" Transfer owned token."],
+          "label": "get_nft_info",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 23
+          },
+          "selector": "0xc930a19f"
+        },
+        {
+          "args": [
+            {
+              "label": "id",
+              "type": {
+                "displayName": ["TokenId"],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [
+            " Deletes an existing token. Only the owner can burn the token."
+          ],
+          "label": "burn",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": ["Result"],
+            "type": 18
+          },
+          "selector": "0xb1efc17b"
+        }
+      ]
+    },
+    "storage": {
+      "struct": {
+        "fields": [
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "ty": 0
+              }
+            },
+            "name": "token_owner"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                "ty": 6
+              }
+            },
+            "name": "owned_tokens"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0200000000000000000000000000000000000000000000000000000000000000",
+                "ty": 8
+              }
+            },
+            "name": "owned_tokens_count"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0300000000000000000000000000000000000000000000000000000000000000",
+                "ty": 9
+              }
+            },
+            "name": "token_data"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0400000000000000000000000000000000000000000000000000000000000000",
+                "ty": 7
+              }
+            },
+            "name": "all_tokens"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0500000000000000000000000000000000000000000000000000000000000000",
+                "ty": 13
+              }
+            },
+            "name": "prices"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0600000000000000000000000000000000000000000000000000000000000000",
+                "ty": 7
+              }
+            },
+            "name": "tokens_for_sale"
+          }
+        ]
+      }
+    },
+    "types": [
+      {
+        "id": 0,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 5,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 1
+            },
+            {
+              "name": "V",
+              "type": 2
+            }
+          ],
+          "path": ["ink_storage", "lazy", "mapping", "Mapping"]
+        }
+      },
+      {
+        "id": 1,
+        "type": {
+          "def": {
+            "primitive": "u32"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 3,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": ["ink_env", "types", "AccountId"]
+        }
+      },
+      {
+        "id": 3,
+        "type": {
+          "def": {
+            "array": {
+              "len": 32,
+              "type": 4
+            }
+          }
+        }
+      },
+      {
+        "id": 4,
+        "type": {
+          "def": {
+            "primitive": "u8"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 3,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": ["ink_primitives", "Key"]
+        }
+      },
+      {
+        "id": 6,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 5,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 2
+            },
+            {
+              "name": "V",
+              "type": 7
+            }
+          ],
+          "path": ["ink_storage", "lazy", "mapping", "Mapping"]
+        }
+      },
+      {
+        "id": 7,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 1
+            }
+          }
+        }
+      },
+      {
+        "id": 8,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 5,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 2
+            },
+            {
+              "name": "V",
+              "type": 1
+            }
+          ],
+          "path": ["ink_storage", "lazy", "mapping", "Mapping"]
+        }
+      },
+      {
+        "id": 9,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 5,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 1
+            },
+            {
+              "name": "V",
+              "type": 10
+            }
+          ],
+          "path": ["ink_storage", "lazy", "mapping", "Mapping"]
+        }
+      },
+      {
+        "id": 10,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "poebat",
+                  "type": 11,
+                  "typeName": "Option<ink_prelude::string::String>"
+                }
+              ]
+            }
+          },
+          "path": ["smartcontract", "erc721", "NftData"]
+        }
+      },
+      {
+        "id": 11,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "index": 0,
+                  "name": "None"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 12
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Some"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 12
+            }
+          ],
+          "path": ["Option"]
+        }
+      },
+      {
+        "id": 12,
+        "type": {
+          "def": {
+            "primitive": "str"
+          }
+        }
+      },
+      {
+        "id": 13,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 5,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 1
+            },
+            {
+              "name": "V",
+              "type": 14
+            }
+          ],
+          "path": ["ink_storage", "lazy", "mapping", "Mapping"]
+        }
+      },
+      {
+        "id": 14,
+        "type": {
+          "def": {
+            "primitive": "u128"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "index": 0,
+                  "name": "None"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 2
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Some"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 2
+            }
+          ],
+          "path": ["Option"]
+        }
+      },
+      {
+        "id": 16,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 17
+            }
+          }
+        }
+      },
+      {
+        "id": 17,
+        "type": {
+          "def": {
+            "tuple": [1, 10]
+          }
+        }
+      },
+      {
+        "id": 18,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 19
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Ok"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 20
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Err"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 19
+            },
+            {
+              "name": "E",
+              "type": 20
+            }
+          ],
+          "path": ["Result"]
+        }
+      },
+      {
+        "id": 19,
+        "type": {
+          "def": {
+            "tuple": []
+          }
+        }
+      },
+      {
+        "id": 20,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "index": 0,
+                  "name": "LOL"
+                },
+                {
+                  "index": 1,
+                  "name": "CannotParseMetadata"
+                },
+                {
+                  "index": 2,
+                  "name": "NotOwner"
+                },
+                {
+                  "index": 3,
+                  "name": "NotApproved"
+                },
+                {
+                  "index": 4,
+                  "name": "TokenExists"
+                },
+                {
+                  "index": 5,
+                  "name": "TokenNotFound"
+                },
+                {
+                  "index": 6,
+                  "name": "CannotInsert"
+                },
+                {
+                  "index": 7,
+                  "name": "CannotFetchValue"
+                },
+                {
+                  "index": 8,
+                  "name": "NotAllowed"
+                },
+                {
+                  "index": 9,
+                  "name": "AlreadyForSale"
+                },
+                {
+                  "index": 10,
+                  "name": "NotForSale"
+                },
+                {
+                  "index": 11,
+                  "name": "NotEnoughSent"
+                },
+                {
+                  "index": 12,
+                  "name": "CannotMakeTransfer"
+                },
+                {
+                  "index": 13,
+                  "name": "CannotTransferToken"
+                }
+              ]
+            }
+          },
+          "path": ["smartcontract", "erc721", "Error"]
+        }
+      },
+      {
+        "id": 21,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 22
+            }
+          }
+        }
+      },
+      {
+        "id": 22,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "id",
+                  "type": 1,
+                  "typeName": "TokenId"
+                },
+                {
+                  "name": "price",
+                  "type": 14,
+                  "typeName": "Balance"
+                }
+              ]
+            }
+          },
+          "path": ["smartcontract", "erc721", "ForSale"]
+        }
+      },
+      {
+        "id": 23,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 10
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Ok"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 20
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Err"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 10
+            },
+            {
+              "name": "E",
+              "type": 20
+            }
+          ],
+          "path": ["Result"]
+        }
+      }
+    ]
+  }
+}
