@@ -117,7 +117,7 @@ onMounted(() => {
       <div class="header__wrapper">
         <div class="header__left">
           <a href="/" class="header__link"
-            ><h1 class="header__title">Brute Force</h1></a
+            ><h1 class="header__title">EventSpace</h1></a
           >
           <common-search class="header__search" />
         </div>
